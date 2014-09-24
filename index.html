@@ -14,18 +14,16 @@
 <img id="logoImage" src="beepMeLogo.png">
 
 
-	<div id="Users">
+	<div >
+		<div id="flip-counterUsers" class="flip-counter"></div>
 		<img id="userPic" src="user.png" height="110" width="110">
-		<div id="wrapper">
-			<div id="flip-counterUsers" class="flip-counter"></div>
-		</div>
+		<img id="hitchhikingPic" src="hitchhiking.png" height="110" width="110">
+		<div id="flip-counterRides" class="flip-counter"></div>
 	</div>
 	
-	<div id="RidesDiv">
-		<img id="hitchhikingPic" src="hitchhiking.png" height="110" width="110">	
-		<div id = "rides">
-			<div id="flip-counterRides" class="flip-counter"></div>
-		</div>
+	<div>
+
+
 	</div>
 		
 	<script type="text/javascript">
@@ -35,7 +33,12 @@
 		// Initialize a new counter
 		var usersCounter = new flipCounter('flip-counterUsers', {value:0, pace:1500, auto:false});
 		var ridesCounter = new flipCounter('flip-counterRides', {value:0, pace:1500, auto:false});
-		
+		var totalUsersNumber = 0;
+		var totalRidesNumber = 0;
+
+		var newUserAudio = new Audio('newUserSoundForDashboard.mp3');
+		var newRideAudio = new Audio('NewRidesSound.mp3');
+
 		//First initialize
 		 $.ajax({
 				type: "GET",
@@ -44,6 +47,8 @@
 					}).then(function(data) {
 					   usersCounter.setValue(data.message.totalUsers);
 					   ridesCounter.setValue(data.message.totalRides);
+					   totalUsersNumber = data.message.totalUsers;
+					   totalRidesNumber = data.message.totalRides;
 		})
 		
 		//interval every 10 seconds
@@ -53,8 +58,25 @@
 				url: "http://www.beepmeapp.com/bmaserver/web/vanity",
 				dataType: "jsonp"
 					}).then(function(data) {
-					   usersCounter.setValue(data.message.totalUsers);
-					   ridesCounter.setValue(data.message.totalRides);
+
+						//We got new number of users
+						if(data.message.totalUsers > totalUsersNumber)
+						{
+							totalUsersNumber = data.message.totalUsers;
+							newUserAudio.play();
+							usersCounter.setValue(data.message.totalUsers);
+							console.log("Number of users " + totalUsersNumber);
+
+						}
+
+						if(data.message.totalRides > totalRidesNumber)
+						{
+							totalRidesNumber = data.message.totalRides;
+							newRideAudio.play();
+					   		ridesCounter.setValue(data.message.totalRides);
+							console.log("Number of rides " + totalRidesNumber);
+						}			   
+
 					   });
 		},10000);
 	});
