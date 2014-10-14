@@ -1,0 +1,22 @@
+iframe {
+	width:235px;
+	height:105px;
+	border-bottom: #E5E5E5 1px solid;
+}
+
+#Layer1{
+	position:absolute; 
+	left:28px;
+	top:57px;
+	width:240px;
+	height:440px;
+	z-index:1;
+}
+table{
+	width: 277px;
+	border:0px;
+}
+img{
+	width:277px;
+ 	height:531px;
+}

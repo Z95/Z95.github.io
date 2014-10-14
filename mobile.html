@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+</head>
+
+
+<body>
+	
+<div id="Layer1">
+<div>
+	<marquee behavior="scroll" direction="down" scrollamount="3" height="420">
+		<iframe name="FRAME1" src="user.html" frameborder="0" scrolling="no" ></iframe>
+		<iframe name="FRAME1" src="user.html" frameborder="0" scrolling="no" ></iframe>
+		<iframe name="FRAME1" src="user.html" frameborder="0" scrolling="no" ></iframe>
+		<iframe name="FRAME1" src="user.html" frameborder="0" scrolling="no" ></iframe>
+	</marquee>
+	</div>
+</div>
+
+<table cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+			<img src="img/Fee.png"/>
+		</td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+	/*<![CDATA[*/
+
+	var zxcRotate={
+
+		init:function(o){
+			var p=document.getElementById(o.ID),ms=o.Animate,b=p?p.getElementsByTagName('DIV')[0]:null,i=b?b.getElementsByTagName('IFRAME'):[],bc;
+			if (i[0]){
+				p.style.overflow='hidden';
+				b.style.position='absolute';
+				b.style.width='3000px';
+				o.bc=b.cloneNode(true);
+				o.bc.style.top='0px';
+				o.p=p;
+				o.lgth=i.length;
+				o.b=[b,'left'];
+				o.lst=i[o.lgth-1];
+				b.appendChild(o.bc);
+				o.ms=typeof(ms)=='number'&&ms>0?ms*1000:10000;
+				this.rotate(o);
+			}
+		},
+
+		rotate:function(o){
+			var i=o.p.getElementsByTagName('iframe'),sz,z0=0;
+			for (;z0<i.length;z0++){
+				i[z0].style.marginLeft=(o.p.offsetWidth-i[0].width*o.lgth)/o.lgth+'px';
+			}
+			sz=o.lst.width+o.lst.offsetLeft;
+			o.bc.style.left=sz+'px';
+			this.animate(o,o.b,-sz,0,new Date(),o.ms);
+		},
+
+
+		animate:function(o,a,f,t,srt,mS){
+			clearTimeout(a[4]);
+			var oop=this,ms=new Date()-srt,n=(t-f)/mS*ms+f;
+			if (isFinite(n)){
+				a[0].style[a[1]]=n+'px';
+			}
+			if (ms<mS){
+				a[4]=setTimeout(function(){ oop.animate(o,a,f,t,srt,mS); },10);
+			}
+			else {
+				a[0].style[a[1]]=t+'px';
+				 oop.rotate(o);
+			}
+		}
+
+
+	}
+
+	// zxcRotate.init({
+	// 	ID:'Layer1',
+	// 	Animate:14
+	// });
+
+/*]]>*/
+</script>
+</body>
+</html>

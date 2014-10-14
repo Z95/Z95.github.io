@@ -1,0 +1,84 @@
+
+#container{
+	height: 15px;
+	width: 215px;
+}
+#photo{
+	float: left;
+	height: 50px;
+	width: 50px;
+	border-radius: 4px;
+	margin-right: 6px;
+	margin-left:-10px;
+}
+
+#name{
+	font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+	margin-bottom: 6px;
+	font-size: 12px;
+	margin-right: 0px;
+}
+}
+#details,#from{
+	margin-right: 0px;
+}
+table{
+	margin-left: -4px;
+	margin-right: 0px;
+}
+
+#fromTitle,#desTitle{
+	font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+	color: #9396A9;
+	text-align: right;
+	font-size: 12px;
+}
+
+#fromLocation,#desLocation{
+	font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+	color: black;
+	text-align: left;
+	font-size: 12px;
+}
+
+
+
+#footerPanel{
+	float: left;
+	margin-left: 29px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+
+#phone{
+	height: 15px;
+	width: 16px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+#mail{
+	height: 15x;
+	width: 21px;
+	margin-top: 5px;
+	margin-left: 14px;
+}
+#message{
+	height: 20px;
+	width: 23px;
+	margin-top: 5px;
+	margin-left: 14px;
+}
+#price{
+	height: 20px;
+	width: 38px;
+	margin-left: 170px;
+	border-radius: 3px;
+	float: left;
+	margin-top: -24px;
+	color: white;
+	background-color: #7F92BD;
+	border: 0px;
+	font-size: 11px;
+}
+

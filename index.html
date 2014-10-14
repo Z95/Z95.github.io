@@ -1,87 +1,96 @@
 <!DOCTYPE html>
+<html>
+
 <head>
-<title>Beep My Dashboard</title>
-	<script type="text/javascript" src="js/flipcounter.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/counter.css" />
-	
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/demo.css" />
-	
+	<title>Welcome to BeepMe</title>
+	<link rel="stylesheet" type="text/css" href="css/new.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Expletus Sans">
+	<link href="css/polyglot-language-switcher.css" type="text/css" rel="stylesheet">
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.polyglot.language.switcher.js" type="text/javascript"></script>
+
+    <!-- Just for tests -->
+	<script type="text/javascript">
+	        $(document).ready(function() {
+	            $('#polyglotLanguageSwitcher').polyglotLanguageSwitcher({
+					effect: 'fade',
+	                testMode: true,
+	                onChange: function(evt){
+	                    alert("The selected language is: "+evt.selectedItem);
+	                }
+	//                ,afterLoad: function(evt){
+	//                    alert("The selected language has been loaded");
+	//                },
+	//                beforeOpen: function(evt){
+	//                    alert("before open");
+	//                },
+	//                afterOpen: function(evt){
+	//                    alert("after open");
+	//                },
+	//                beforeClose: function(evt){
+	//                    alert("before close");
+	//                },
+	//                afterClose: function(evt){
+	//                    alert("after close");
+	//                }
+				});
+	        });
+	    </script>
 </head>
 
 <body>
-<h1>Beep My Dashboard</h1>
-<img id="logoImage" src="beepMeLogo.png">
+<div class="main">
+	<div class="mainContainer">
+		<div id="loginBar">
+			<h3 id="BeepMe">BeepMe</h3>
+			<button id="loginButton">Log in</button>
+		</div>
 
+		<div id="content">
+			<h2 id="ridesLabel">Rides</h2>
+			<h1 id="numOfRides" class="numOfRide">1</h1>
 
-	<div >
-		<div id="flip-counterUsers" class="flip-counter"></div>
-		<img id="userPic" src="user.png" height="110" width="110">
-		<img id="hitchhikingPic" src="hitchhiking.png" height="110" width="110">
-		<div id="flip-counterRides" class="flip-counter"></div>
+		</div>
+
+		<div>
+			<h2 id="partner">Find partners. Ride together<br/>Save money.</h2>
+		</div>
+
+		<div id="find">
+			<p>Find ride-share partners now!</p>
+		</div>
+		<div>
+			<img src="img/appstore_badge_black_en.png" id="appStoreLogo">
+			<img src="img/google_play_badge_black_en.png" id="googlePlayLogo">
+		</div>
+
+		<div id="pageFooter">
+			<ol>
+				<li>Terms</li>
+				<li>privacy</li>
+				<div id="polyglotLanguageSwitcher">
+						<form action="#">
+							<select id="polyglot-language-options">
+								<option id="br" value="br" selected>Brazil</option>
+								<option id="il" value="il">ישראל</option>
+								<option id="en" value="en">English</option>
+							</select>
+						</form>
+				</div>
+			</ol>
+		</div>
+
+		<div id="liveFeed">
+			<!-- <img src="img/feed.png"></img> -->
+					<iframe width="290" height="551" src="mobile.html"></iframe>
+		</div>
+
 	</div>
-	
-	<div>
-
-
-	</div>
-		
-	<script type="text/javascript">
-	//<![CDATA[
-
-	$(function(){
-		// Initialize a new counter
-		var usersCounter = new flipCounter('flip-counterUsers', {value:0, pace:1500, auto:false});
-		var ridesCounter = new flipCounter('flip-counterRides', {value:0, pace:1500, auto:false});
-		var totalUsersNumber = 0;
-		var totalRidesNumber = 0;
-
-		var newUserAudio = new Audio('newUserSoundForDashboard.mp3');
-		var newRideAudio = new Audio('NewRidesSound.mp3');
-
-		//First initialize
-		 $.ajax({
-				type: "GET",
-				url: "http://www.beepmeapp.com/bmaserver/web/vanity",
-				dataType: "jsonp"
-					}).then(function(data) {
-					   usersCounter.setValue(data.message.totalUsers);
-					   ridesCounter.setValue(data.message.totalRides);
-					   totalUsersNumber = data.message.totalUsers;
-					   totalRidesNumber = data.message.totalRides;
-		})
-		
-		//interval every 10 seconds
-		setInterval(function(){
-			 $.ajax({
-				type: "GET",
-				url: "http://www.beepmeapp.com/bmaserver/web/vanity",
-				dataType: "jsonp"
-					}).then(function(data) {
-
-						//We got new number of users
-						if(data.message.totalUsers > totalUsersNumber)
-						{
-							totalUsersNumber = data.message.totalUsers;
-							newUserAudio.play();
-							usersCounter.setValue(data.message.totalUsers);
-							console.log("Number of users " + totalUsersNumber);
-
-						}
-
-						if(data.message.totalRides > totalRidesNumber)
-						{
-							totalRidesNumber = data.message.totalRides;
-							newRideAudio.play();
-					   		ridesCounter.setValue(data.message.totalRides);
-							console.log("Number of rides " + totalRidesNumber);
-						}			   
-
-					   });
-		},10000);
-	});
-	
-
-	
-	</script>
+</div>
 </body>
+
+</html>
+
