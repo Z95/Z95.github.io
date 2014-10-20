@@ -44,48 +44,59 @@
 <body>
 <div class="main">
 	<div class="mainContainer">
-		<div id="loginBar">
-			<h3 id="BeepMe">BeepMe</h3>
-			<button id="loginButton">Log in</button>
+
+		<div class="loginBar">
+			<h3 class="BeepMe">BeepMe</h3>
+			<button class="loginButton">Log in</button>
 		</div>
 
-		<div id="content">
-			<h2 id="ridesLabel">Rides</h2>
-			<h1 id="numOfRides" class="numOfRide">1</h1>
-
+		<div class="content">
+			<span class="numOfRides">1</span>
+			<span class="ridesLabel">Rides</span>
 		</div>
 
 		<div>
-			<h2 id="partner">Find partners. Ride together<br/>Save money.</h2>
+			<p class="partner">Ride together. Save money.</p>
 		</div>
 
-		<div id="find">
-			<p>Find ride-share partners now!</p>
+		<div class="find">
+			<span>Find ride-share partners now!</span>
 		</div>
-		<div>
-			<img src="img/appstore_badge_black_en.png" id="appStoreLogo">
-			<img src="img/google_play_badge_black_en.png" id="googlePlayLogo">
+		
+		<div class="appsLink">
+			<a data-mixpanel="Clicked App Store link" href="https://itunes.apple.com/il/app/beepme/id679013729?mt=8" target="_blank">
+				<img class="appStoreLogo" src="img/appstore_badge_black_en.png">
+			</a>
+			<a href="https://play.google.com/store/apps/details?id=com.beepmeapp.beepme" target="_blank" data-mixpanel="Clicked Google Play link">
+				<img class="googlePlayLogo" src="img/google_play_badge_black_en.png">
+			</a>
 		</div>
 
-		<div id="pageFooter">
+		<!-- Languages combobox -->
+		<div class="pageFooter">
 			<ol>
 				<li>Terms</li>
-				<li>privacy</li>
+				<li>Privacy</li>
 				<div id="polyglotLanguageSwitcher">
 						<form action="#">
 							<select id="polyglot-language-options">
-								<option id="br" value="br" selected>Brazil</option>
+								<option id="br" value="br">Brazil</option>
 								<option id="il" value="il">ישראל</option>
-								<option id="en" value="en">English</option>
+								<option id="en" value="en">UK</option>
+								<option id="fr" value="fr">France</option>
+								<option id="de" value="de">Germany</option>
+								<option id="it" value="it">Italia</option>
+								<option id="es" value="es">Spain</option>
 							</select>
 						</form>
 				</div>
 			</ol>
 		</div>
 
-		<div id="liveFeed">
+		<!-- Live Feed -->
+		<div class="liveFeed">
 			<!-- <img src="img/feed.png"></img> -->
-					<iframe width="290" height="551" src="mobile.html"></iframe>
+					<iframe width="290" height="551" src="mobile.html" scrolling="no"></iframe>
 		</div>
 
 	</div>
