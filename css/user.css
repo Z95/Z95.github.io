@@ -17,6 +17,7 @@
 	margin-bottom: 6px;
 	font-size: 12px;
 	margin-right: 0px;
+	font-weight: bold;
 }
 }
 #details,#from{
@@ -39,6 +40,7 @@ table{
 	color: black;
 	text-align: left;
 	font-size: 12px;
+	font-weight: bold;
 }
 
 

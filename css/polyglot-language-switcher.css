@@ -53,11 +53,13 @@ License URI: http://www.opensource.org/licenses/mit-license.php
 #polyglotLanguageSwitcher a {
 	text-decoration: none;
 	display: block;	
-	padding: 0.5em 3px 0.3em 28px; /* 6px 6px 6px 28px */
-	color: #444;
+	padding: 0.0em 1px 0px 28px; /* 6px 6px 6px 28px */
+	color: #9497A8;
+	font-size: 18px;
+	font-weight: bold;
 	width: 5em; /* 84px; total width: 120px */
 	background-repeat: no-repeat;
-	background-position: 6px center; 
+	background-position: 5px 4px; 
 }
 
 #polyglotLanguageSwitcher a:hover {
@@ -88,8 +90,8 @@ License URI: http://www.opensource.org/licenses/mit-license.php
 	width: 10px;
 	height: 5px;
 	text-indent: -10000em;
-	top: 0.8em; /* 6px */
-	right: 6px;
+	top: 0.4em; /* 6px */
+	right: -1px;
 }
 
 #polyglotLanguageSwitcher a.current:link span.trigger, #polyglotLanguageSwitcher a.current:visited span.trigger {
@@ -134,4 +136,18 @@ License URI: http://www.opensource.org/licenses/mit-license.php
 #il { 
 	background-image: url(../img/flags/il.png);	
 }
+#fr { 
+	background-image: url(../img/flags/fr.png);	
+}
 
+#de { 
+	background-image: url(../img/flags/de.png);	
+}
+
+#it { 
+	background-image: url(../img/flags/it.png);	
+}
+
+#es { 
+	background-image: url(../img/flags/es.png);	
+}

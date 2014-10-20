@@ -7,7 +7,7 @@ window.onload = function() {
 			dataType: "jsonp"
 				}).then(function(data) {
 					var number = data.message.totalRides;
-					$("#numOfRides").text(number.toLocaleString("de-DE"));
+					$(".numOfRides").text(number.toLocaleString("de-DE"));
 					console.log("Number of rides " + number);			   
 
 				   });
@@ -19,15 +19,16 @@ window.onload = function() {
 			dataType: "jsonp"
 				}).then(function(data) {
 					var number = data.message.totalRides;
-					$("#numOfRides").text(number.toLocaleString("de-DE"));
+					$(".numOfRides").text(number.toLocaleString("de-DE"));
 					console.log("Number of rides " +  number);			   
 
 				   });
-	},10000);
+	},3000);
 	console.log("ziv: loaded successfuly")
 
 	$( "#loginButton" ).click(function() {
  		 alert( "פייסבוק וכו" );
 });
 }
+
 

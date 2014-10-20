@@ -5,16 +5,22 @@ Ziv Kalderon
 12/10/2014
 
 */
-#mainContainer{
+
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+.mainContainer{
 	width: 770px;
 }
 
-#loginBar{
+.loginBar{
 	background-color: #3E5B9F;
 	height: 220px;
 }
 
-#BeepMe{
+.BeepMe{
 	color: white;
 	font-family: 'Expletus Sans', sans-serif;
 	font-size: 50px;
@@ -26,7 +32,7 @@ Ziv Kalderon
 	border-radius: 1px;
 }
 
-#loginButton{
+.loginButton{
 	color: white;
 	background-color: #98B1F1;
 	text-align: center;
@@ -36,91 +42,94 @@ Ziv Kalderon
 	width: 120px;
 	border: 0px;
 }
-#loginButton:hover {
+
+.loginButton:hover {
     background-color: #DA70D6;
 }
 
-#numOfRides{
-	font-family: ariel;
-	font-size: 55px;
-	/*float: left;*/
-
-	margin-left: 49%;
-	margin-top: -88px;
-	color: gray;
-}
-
-#ridesLabel{
-	font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
-	font-size: 35px;
-	/*float: left;*/
-	color: gray;
-
-	text-align: center;
-	margin-left: 550px;
+.content{
 	margin-top: 100px;
-}
-
-#partner{
-	font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
-	font-size: 26px;
-	/*float: left;*/
-
-	margin-left: 49%;
-	margin-top: -49px;
-}
-
-#find{
-	font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
-	font-size: 22px;
-
-	/*float: left;*/
-	margin-top: 90px;
 	margin-left: 49%;
 	margin-bottom: 0px;
 }
+.numOfRides{
+	font-family: ariel;
+	font-size: 45px;
 
-#googlePlayLogo{
-	height: 40px;
-	width: 129px;
-	float:right;
-	position: absolute;
-  	right: 50%;
-  	margin-right: -107px;
+	float: left;
+	color: #9497A8;
 }
 
-#appStoreLogo{
-	height: 40px;
-	width: 129px;
-	float:right;
-	position: absolute;
-  	right: 50%;
-  	margin-right: -255px;
-  	margin-top: 0px;
+.ridesLabel{
+	font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 25px;
+	color: #9497A8;
+
+	margin-top: 18px;
+	float: left;
+	margin-left: 10px;
+}
+
+.partner{
+	font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 22px;
+	float: left;
+
+	margin-left: 49%;
+	margin-top: -10px;
+	margin-bottom: 92px;
+	color: #333333;
+}
+
+.find{
+	font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 20px;
+	margin-left: 49%;
+	float: left;
+	margin-bottom: 5px;
+	color: #7A7A7A;
 }
 
 
-#liveFeed,iframe{
+.appStoreLogo{
+	height: 40px;
+	width: 129px;
+	margin-left: 49%;
+}
+
+.googlePlayLogo{
+	height: 40px;
+	width: 129px;
+	margin-left: 40px;
+}
+
+.liveFeed,iframe{
 	float:left;
 	position: absolute ;
-  	right: 50%;
-  	margin-right: 80px;
   	border:0px;
-  	top:30px
+  	top:5px;
+  	margin-left:0px;
 }
 
 
 /*Footer*/
 ol{
 	list-style-type: none;
-	float:right;
-	margin-right: 47%;
-	margin-top: 100px;
+	float:left;
+	margin-left: 13%;
+	margin-top: 50px;
 }
 
 li{
+	  font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+	  color: #9497A8;
+	  font-weight: bold;
+	  font-size: 18px;
 	  display: inline;
-	  margin: 40px;
+	  margin: 30px;
+}
+li:hover{
+	color: #000;
 }
 
 #polyglotLanguageSwitcher{
